@@ -1,0 +1,112 @@
+.ul{
+  list-style: none;
+  width: 100vh;
+}
+
+.sidebar{
+  width: 100vh;
+}
+
+.banner li{
+  padding: 10px;
+}
+
+.banner{
+  display: flex;
+  
+  margin-bottom: 140px;
+}
+
+.banner2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #000;
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ccc;
+}
+
+.logo img {
+  width: 25px;
+}
+
+.text h2 {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+.text button {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dots {
+  margin-top: 10px;
+}
+
+.dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #555;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+
+.dots .active {
+  background: #f36;
+}
+
+.img {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.img img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text h2 {
+    font-size: 24px;
+  }
+
+  .img img {
+    width: 180px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 755px) {
+  .sidebar{
+    width: 100%;
+    text-align: center;
+  }
+}

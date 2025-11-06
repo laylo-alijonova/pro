@@ -1,0 +1,40 @@
+.category{
+  display: flex;
+  gap: 10px;
+}
+
+.browse{
+  font-size: 35px;
+  margin-top: 20px;
+}
+
+.title2{
+  margin-top: 20px;
+}
+
+.carts{
+  width: 100%;
+  margin: 30px 0 30px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap
+}
+
+.phone{
+  border: 1px solid #0000004D;
+  width: 180px;
+  height: 150px;
+}
+
+.carts p{
+  text-align: center;
+  align-items: center;
+}
+
+.phone-icon{
+  font-size: 80px;
+  text-align: center;
+  align-items: center;
+  margin: 15px 0 10px 55px;
+}

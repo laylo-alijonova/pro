@@ -1,0 +1,12 @@
+ul{
+  list-style: none;
+}
+
+.cont{
+margin: 0 80px 0 80px;
+}
+@media screen and (max-width: 555px) {
+.cont{
+  margin: 20px;
+}
+}

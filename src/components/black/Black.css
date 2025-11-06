@@ -1,0 +1,24 @@
+.parfume{
+  width: 49%;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1155px){
+  .imgs-wr{
+   width: 100%;
+   justify-content: center;
+  }
+  
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin: 50px 0 50px;
+}
+
+.deliver{
+  text-align: center;
+}
