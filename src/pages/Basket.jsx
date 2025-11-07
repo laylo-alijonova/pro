@@ -1,28 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
+export default function Basket() {
+  const cart = useSelector((state) => state.shop.cart);
+console.log(cart);
 
-function Basket({ basket }) {
   return (
-    <div className="basket-wrapper">
-      <h2 className="basket-title">Basket</h2>
-
-      {basket.length === 0 ? (
-        <p className="no-basket">Your basket is empty.</p>
-      ) : (
-        <div className="basket-grid">
-          {basket.map((item) => (
-            <div key={item.id} className="basket-card">
-              <img src={item.image} alt={item.name} className="basket-img" />
-              <div className="basket-info">
-                <h3>{item.name}</h3>
-                <p>${item.price}</p>
-              </div>
+    <div className="wishlist-container">
+      <h2>Basket</h2>
+    
+        <div className="wishlist-grid">
+          {cart.map((item) => (
+            <div key={item.id} className="card">
+              <img src={item.image}  />
+              <h3>{item.name}</h3>
+              <p className="price">${item.price}</p>
             </div>
           ))}
         </div>
-      )}
+      
     </div>
   );
-}
-
-export default Basket;
+};

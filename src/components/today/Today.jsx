@@ -2,21 +2,24 @@ import "./Today.css"
 import { FaRegHeart } from "react-icons/fa6";
 import { products } from '../../mock';
 import { Link } from 'react-router-dom';
-import { FaHeart } from 'react-icons/fa';
+
 import { toggleLike, addToCart } from '../../redux/ShopSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
-function Today({isLiked, onbasket}){
+function Today({onlike, onbasket}){
   
   const dispatch = useDispatch();
-  const likedItems = useSelector((state) => state.shop.liked);
-
+ 
   const handleLike = (item) => {
     dispatch(toggleLike(item));
+    onlike();
   };
   
-  const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+ 
+
+  const handleClick = (item) => {
+    dispatch(addToCart(item)); 
+    onbasket();             
   };
 
   return(
@@ -71,14 +74,12 @@ function Today({isLiked, onbasket}){
 </Link>
 <div 
               className="like-icon" 
-              onClick={() => handleLike(item)} // <-- handleLike funksiyasiga joriy mahsulot (item) uzatiladi
+              onClick={() => handleLike(item)} 
               style={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px' }}
             >
-              {isLiked ? (
-                <FaHeart style={{ color: 'red' }} /> // Yoqtirilgan bo'lsa qizil yurak
-              ) : (
-                <FaRegHeart style={{ color: 'gray' }} /> // Yoqtirilmagan bo'lsa bo'sh yurak
-              )}
+             
+                <FaRegHeart style={{ color: 'gray' }} /> 
+              
             </div>
             <h3>{item.name}</h3>
             <p>
@@ -86,7 +87,11 @@ function Today({isLiked, onbasket}){
               <span className="old-price">${item.oldPrice}</span>
             </p>
             <p>⭐⭐⭐</p>
-            <button className="btn" onClick={onbasket}>Add to Cart</button>
+            <div onClick={() => handleClick(item)}>
+            <button  className="add-btn" >
+                🛒 Add To Cart
+              </button>
+            </div>
           </div>
         ))}
       </div>

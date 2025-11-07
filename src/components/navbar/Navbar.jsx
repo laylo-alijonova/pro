@@ -11,13 +11,15 @@ function Navbar({ likedCount, basketCount }){
         </div>
 
         <nav>
+          <Link to={"/"}>
           <h2>Exclusive</h2>
+          </Link>
           <ul className='site-header-list'>
             <li>
               <a href="">Home</a>
             </li>
             <li>
-              <Link to={"conx"} href="">Contact</Link>
+              <Link to={"con"} href="">Contact</Link>
             </li>
             <li>
               <a href="">About</a>
